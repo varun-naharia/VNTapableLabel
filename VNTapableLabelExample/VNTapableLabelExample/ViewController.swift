@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-            lblText.enableTap(delegate: self)
+        lblText.enableTap()
+        lblText.vnDelegate = self
     }
 
 

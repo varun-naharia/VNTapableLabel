@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sjM-dy-rlZ">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -11,15 +11,19 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="87p-2H-G46">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VNTapableLabelExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController id="sjM-dy-rlZ" customClass="ViewController" customModule="ClickUILabel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pdI-04-bzD"/>
+                        <viewControllerLayoutGuide type="bottom" id="kM3-70-fJd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i7D-dS-ERU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTP-bn-cKH" customClass="VNTapableLabel" customModule="VNTapableLabelExample" customModuleProvider="target">
-                                <rect key="frame" x="20" y="44" width="374" height="243.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enF-Kw-loL" customClass="VNTapableLabel" customModule="VNTapableLabelExample" customModuleProvider="target">
+                                <rect key="frame" x="12" y="27.999999999999986" width="390" height="243.66666666666663"/>
                                 <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a quam nec ante porttitor vehicula eget faucibus eros. Phasellus venenatis, lorem a dictum sagittis, sapien tortor rutrum mi, vel dapibus orci nibh eget erat. Maecenas aliquet eros velit, non commodo risus aliquet eget. Suspendisse sed justo faucibus turpis sagittis vestibulum pharetra quis velit. Donec sed sollicitudin justo. In rutrum dignissim eros. Nam justo erat, laoreet in volutpat eget, vulputate et enim. Fusce mattis mollis purus at malesuada. Sed commodo nisi orci.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -28,19 +32,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hTP-bn-cKH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vhh-fq-j25"/>
-                            <constraint firstItem="hTP-bn-cKH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="whu-OJ-cmk"/>
-                            <constraint firstItem="hTP-bn-cKH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wzq-7v-obB"/>
+                            <constraint firstItem="enF-Kw-loL" firstAttribute="top" secondItem="pdI-04-bzD" secondAttribute="bottom" constant="8" symbolic="YES" id="Wku-BO-gWr"/>
+                            <constraint firstItem="enF-Kw-loL" firstAttribute="centerX" secondItem="i7D-dS-ERU" secondAttribute="centerX" id="be3-1Y-vmS"/>
+                            <constraint firstItem="enF-Kw-loL" firstAttribute="leading" secondItem="T8d-1W-2EV" secondAttribute="leading" constant="12" id="hAV-A0-WlA"/>
+                            <constraint firstItem="T8d-1W-2EV" firstAttribute="trailing" secondItem="enF-Kw-loL" secondAttribute="trailing" constant="12" id="uzh-0b-S75"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="T8d-1W-2EV"/>
                     </view>
                     <connections>
-                        <outlet property="lblText" destination="hTP-bn-cKH" id="Squ-cF-hPL"/>
+                        <outlet property="lblText" destination="enF-Kw-loL" id="bOv-6f-qBz"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p23-UO-Ehr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>

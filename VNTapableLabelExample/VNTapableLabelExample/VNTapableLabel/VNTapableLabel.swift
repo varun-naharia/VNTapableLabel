@@ -11,18 +11,18 @@ import UIKit
 protocol VNTapableLabelDelegate {
     func didTapOn(word:String)
 }
-class VNTapableLabel: UILabel {
 
+class VNTapableLabel: UILabel {
+    
     var vnDelegate:VNTapableLabelDelegate?
-    func enableTap(delegate:Any) {
+    func enableTap() {
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapText(_:)))
         self.addGestureRecognizer(tap)
         self.isUserInteractionEnabled = true
-        self.vnDelegate = delegate as? VNTapableLabelDelegate
     }
     
     @objc func tapText(_ gesture : UITapGestureRecognizer) {
-       
+        
         
         if let selectedWord = gesture.getTextFrom(self)
         {
@@ -30,15 +30,15 @@ class VNTapableLabel: UILabel {
             self.vnDelegate?.didTapOn(word: selectedWord)
         }
     }
-
+    
     
 }
 
 extension UITapGestureRecognizer {
-    func getWords(label:UILabel) -> [[String:String]]  {
+    func getWords(_ label:UILabel) -> [[String:String]] {
         let chararacterSet = CharacterSet.whitespacesAndNewlines.union(.punctuationCharacters)
         let components = label.text!.components(separatedBy: chararacterSet)
-        let wordsOnly = components.filter { !$0.isEmpty }
+        let wordsOnly = components
         var index:Int = 0
         var words:[[String:String]] = []
         for word in wordsOnly
@@ -53,11 +53,12 @@ extension UITapGestureRecognizer {
             
             words.append(["word": word, "start":"\(start)", "end":"\(index-1)"])
         }
+        
         return words
     }
     
-    func getTextFrom(_ label:UILabel) -> String? {
-        let words = getWords(label: label)
+    func getTextFrom(_ label:UILabel ) -> String? {
+        let words = getWords(label)
         let layoutManager = NSLayoutManager()
         let textContainer = NSTextContainer(size: CGSize.zero)
         let textStorage = NSTextStorage(attributedString: label.attributedText!)
